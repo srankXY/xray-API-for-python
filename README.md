@@ -87,15 +87,11 @@ systemctl status proxyAPI
 
 ### 部署到其他路径下，需修改以下2个文件：
 
-> 目前路径写死了在 `/soft/proxy`
-
-> 默认为 `/soft/proxy`，如需部署到其他路径下，需修改以下三个文件：
+> 默认为 `/soft/proxy`
 
 `baseProxy.sh`: baseDir 代理基本目录
 
 `confBase.py`: api 配置文件中代理家目录
-
-`baseProxy.sh`: baseDir 代理基本目录
 
 ## 接口
 
