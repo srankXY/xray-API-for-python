@@ -1,0 +1,13 @@
+[Unit]
+Description=clash
+
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Restart=always
+RestartSec=1800
+ExecStart=/root/gate/clash "-f" "clash.yaml"
+KillMode=process
+[Install]
+WantedBy=multi-user.target

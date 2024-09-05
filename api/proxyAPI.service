@@ -1,0 +1,13 @@
+[Unit]
+Description=proxyAPI Service
+Documentation=https://www.v2fly.org/
+After=network.target nss-lookup.target
+
+[Service]
+Restart=always
+RestartSec=1800
+ExecStartPre=-kill -15 $(pgrep -f "/soft/proxy/api/proxyAPI.py" | head -n 1) > /dev/null 2>&1
+ExecStart=python '/soft/proxy/api/proxyAPI.py'
+KillMode=process
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=V2Ray Service
+Documentation=https://www.v2fly.org/
+After=network.target nss-lookup.target
+
+[Service]
+Restart=always
+RestartSec=1800
+ExecStartPre=-kill -15 $(pgrep -f "v2ray") > /dev/null 2>&1
+ExecStart=/root/gate/clash "-f" "clash.yaml"
+KillMode=process
+[Install]
+WantedBy=multi-user.target
